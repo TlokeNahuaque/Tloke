@@ -35,12 +35,12 @@ const createChatLi2 = (message, className) => {
 const createChatLi3 = (message, className) => {
   const chatLi = document.createElement("li");
   chatLi.classList.add("chat", className);
-  let chatContent = `<p href='https://tlokenahuaque.github.io/DiagramasUCS/Docs/Directorio.html'></p>`
-    className === "saliente"
-      ? `<p href='https://tlokenahuaque.github.io/DiagramasUCS/Docs/Directorio.html'></p>`
-      : `<span style="visibility:hidden" class="material-symbols-outlined"><i class="fa-solid fa-square"></i></span><p href='https://tlokenahuaque.github.io/DiagramasUCS/Docs/Directorio.html'></p>`;
-  chatLi.innerHTML = chatContent;
-  chatLi.querySelector("p").textContent = message;
+  let chatContent =
+  className === "saliente"
+    ? `<p></p>`
+    : `<span style="visibility:hidden" class="material-symbols-outlined"></span><p><a href="https://tlokenahuaque.github.io/DiagramasUCS/Docs/Directorio.html">Directorio</a></p>`;
+chatLi.innerHTML = chatContent;
+chatLi.querySelector("p").textContent = message;
   return chatLi;
 };
 
@@ -63,17 +63,17 @@ const setQuestionNumber = (userMessage) => {
   const specificWord12 = /(bomberos|ext bomberos|ext. bomberos|extension bomberos|extensión bomberos)/i;
   const specificWord13 = /(protección|civil)/i;
   //Sin asignación
-  const specificWord14 = /(extension|numero|telefonico|directorio|telefono)/i;
-  const specificWord15 = /(extension|numero|telefonico|directorio|telefono)/i;
-  const specificWord16 = /(extension|numero|telefonico|directorio|telefono)/i;
-  const specificWord17 = /(extension|numero|telefonico|directorio|telefono)/i;
-  const specificWord18 = /(extension|numero|telefonico|directorio|telefono)/i;
-  const specificWord19 = /(extension|numero|telefonico|directorio|telefono)/i;
-  const specificWord20 = /(extension|numero|telefonico|directorio|telefono)/i;
-  const specificWord21 = /(extension|numero|telefonico|directorio|telefono)/i;
-  const specificWord22 = /(extension|numero|telefonico|directorio|telefono)/i;
-  const specificWord23 = /(extension|numero|telefonico|directorio|telefono)/i;
-  const specificWord24 = /(extension|numero|telefonico|directorio|telefono)/i;
+  const specificWord14 = /(extension|numero|telefonico|telefono)/i;
+  const specificWord15 = /(extension|numero|telefonico|telefono)/i;
+  const specificWord16 = /(extension|numero|telefonico|telefono)/i;
+  const specificWord17 = /(extension|numero|telefonico|telefono)/i;
+  const specificWord18 = /(extension|numero|telefonico|telefono)/i;
+  const specificWord19 = /(extension|numero|telefonico|telefono)/i;
+  const specificWord20 = /(extension|numero|telefonico|telefono)/i;
+  const specificWord21 = /(extension|numero|telefonico|telefono)/i;
+  const specificWord22 = /(extension|numero|telefonico|telefono)/i;
+  const specificWord23 = /(extension|numero|telefonico|telefono)/i;
+  const specificWord24 = /(extension|numero|telefonico|telefono)/i;
   //Tipos de Reporte
   const specificWord25 = /(queja)/i;
   const specificWord26 = /(extension|numero|telefonico|directorio|telefono)/i;
@@ -567,8 +567,8 @@ const generateResponse = (userMessage) => {
     //Asignados
     case 26:
       setTimeout(() => {
-        const response = "[Directorio]";
-        const entranteChatLi = createChatLi2(response, "entrante");
+        const response = "https://tlokenahuaque.github.io/DiagramasUCS/Docs/Directorio.html";
+        const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
       }, 100);
@@ -755,7 +755,7 @@ const generateResponse = (userMessage) => {
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 8000); 
         setTimeout(() => {
-          const response = "Se canaliza a: Policía cibernética de la SSPCDMX Ext. 5086 (para reportes) y 5666 (pláticas de prevención)\nHorario: 24 horas 365 dias.\n\nPolicía Cibernética de la Comisión Nacional de Seguridad: al número telefónico 088, el cual opera las 24 horas del día, los 365 días del año. También puedes realizar denuncias a través de la cuenta de Twitter @CEAC_CNS, el correo ceac@cns.gob.mx, y de la aplicación PF Móvil, disponible para todas las plataformas de telefonía celular.\n\nLa Unidad de Prevención e Investigación Cibernética del Estado de México: cibernetica.edomex@ces.gob.mx Facebook: Cibernetica MXQ Twitter: Cibernetica_MXQ\n\nSi requieres más información puedes consultar el Anexo 4";
+          const response = "Se canaliza a: Policía cibernética de la SSPCDMX Ext. 5086 (para reportes) y 5666 (pláticas de prevención)\nHorario: 24 horas 365 dias.\n\nSi requieres más información puedes consultar el Anexo 4";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
@@ -1200,7 +1200,7 @@ const generateResponse = (userMessage) => {
               chatbox.scrollTo(0, chatbox.scrollHeight);
             }, 5000); 
             setTimeout(() => {
-              const response = "Recomiendaciones:\n • Es importante entablar una adecuada comunicación con voz clara y amable y lograr empatía con el denunciante.\n • Mantener la llamada hasta haber obtenido toda la información necesaria";
+              const response = "Recomienda al usuario:\n • Es importante entablar una adecuada comunicación con voz clara y amable y lograr empatía con el denunciante.\n • Mantener la llamada hasta haber obtenido toda la información necesaria";
               const entranteChatLi = createChatLi2(response, "entrante");
               chatbox.appendChild(entranteChatLi);
               chatbox.scrollTo(0, chatbox.scrollHeight);
@@ -1302,7 +1302,7 @@ const generateResponse = (userMessage) => {
               chatbox.scrollTo(0, chatbox.scrollHeight);
             }, 5000); 
             setTimeout(() => {
-              const response = "Recomiendaciones:\n • Alejarse de los agresores.\n • Mantenerse en un lugar a seguro, cierre puertas, ventanas o cualquier otro tipo de acceso.\n • No responder a las agresiones.\n • Si hay lesionados no los mueva.\n • Cooperar con las autoridades en cuanto arriben a prestarle el apoyo.\n • Es importante denunciar ante el Ministerio Público.";
+              const response = "Recomienda al usuario:\n • Alejarse de los agresores.\n • Mantenerse en un lugar a seguro, cierre puertas, ventanas o cualquier otro tipo de acceso.\n • No responder a las agresiones.\n • Si hay lesionados no los mueva.\n • Cooperar con las autoridades en cuanto arriben a prestarle el apoyo.\n • Es importante denunciar ante el Ministerio Público.";
               const entranteChatLi = createChatLi2(response, "entrante");
               chatbox.appendChild(entranteChatLi);
               chatbox.scrollTo(0, chatbox.scrollHeight);
