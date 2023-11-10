@@ -8,15 +8,29 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">  
 	<script src="https://kit.fontawesome.com/4a84d99523.js" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="css/style.css">
     <script src="js/chatbox copy 2.js" defer></script>
-    
-
-	<title>Chatbox</title>   
+    <link rel="icon" href="img/ico/UCS.png">
+    <title>Asistente Virtual</title>   
 </head>
 
 <body>
+
+        <!--loading-->
+		<div id="contenedor_carga">
+			<div id="carga"></div>
+		</div>
+	
+	
+		<script>
+			window.onload=function()
+			{
+				var contenedor=document.getElementById('contenedor_carga');
+				contenedor.style.visibility='hidden';
+				contenedor.style.opacity='.1';
+			}
+		</script>
+	<!--End Loading-->
 
     <button class="chatbot-toggler">
         <span class="material-symbols-outlined"><i class="fa-solid fa-robot"></i></span>
@@ -37,8 +51,8 @@
             </li>
         </ul>
 
-        <div class="chat-input">
-            <textarea focus placeholder="Ingrese mensaje..." required ></textarea>
+        <div class="chat-input" focus>
+            <textarea placeholder="Ingrese mensaje..." required ></textarea>
             <span id="send-btn" class="material-symbols-outlined"><i class="fa-regular fa-paper-plane"></i></span>
 
         </div>
