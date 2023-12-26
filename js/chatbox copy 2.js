@@ -68,8 +68,8 @@ const setQuestionNumber = (userMessage) => {
   // Expresión regular para buscar menciones del usuario
   const mentionRegex = /(hola|buenos d|buenas no|buenas ta|R11|R4)/i;
 
-  // Extensiones
-  const specificWord1 = /(unidad de c|de contacto|secretario|UCS|K6)/i;
+  // Directorio
+  const specificWord1 = /(unidad de c|de contacto|secretario|UCS)/i;
   const specificWord2 = /(asuntos|internos|ext queja contra|ext. queja contra|pretor|extension queja|extensión queja)/i;
   const specificWord3 = /(ext brigada|ext. brigada|extension brigada|extensión brigada|ext vigilan|ext. vigilan|extension vigilan|extensión vigilan|ext animal|ext. animal|extension animal|extensión animal|ext bva|ext. bva|extension bva|extensión bva)/i;
   const specificWord4 = /(ext pol|ext. pol|extension pol|extensión pol|ext cib|ext. cib|extension cib|extensión cib)/i;
@@ -81,88 +81,86 @@ const setQuestionNumber = (userMessage) => {
   const specificWord10 = /(narco|ext drog|ext. drog|extension drog|extensión drog|ext vent|ext. vent|extension vent|extensión vent)/i;
   const specificWord11 = /(fuerza de|tarea|zorros)/i;
   const specificWord12 = /(bomberos|ext bomberos|ext. bomberos|extension bomberos|extensión bomberos)/i;
-  const specificWord13 = /(protección|civil)/i;
-  const specificWord14 = /(X2)/i;
-  const specificWord15 = /(X9)/i;
-  const specificWord16 = /(R6)/i;
-  const specificWord17 = /(R7)/i;
-  const specificWord18 = /(R9)/i;
-  const specificWord19 = /(R12)/i;
-  const specificWord20 = /(R8)/i;
-  const specificWord21 = /(K9)/i;
-  const specificWord22 = /(R13)/i;
-  const specificWord23 = /(no|muchas|gracia|enterado|entendido|R10|R2|X3|R5|K4)/i;
-  const specificWord24 = /(diagrama|de flujo)/i;
+  const specificWord13 = /(protección c|civil)/i;
+    const specificWord14 = /(hola|buenos d|buenas no|buenas ta|R11)/i;
+    const specificWord15 = /(hola|buenos d|buenas no|buenas ta|R11)/i;
+    const specificWord16 = /(hola|buenos d|buenas no|buenas ta|R11)/i;
+    const specificWord17 = /(hola|buenos d|buenas no|buenas ta|R11)/i;
+    const specificWord18 = /(hola|buenos d|buenas no|buenas ta|R11)/i;
+    const specificWord19 = /(hola|buenos d|buenas no|buenas ta|R11)/i;
+    const specificWord20 = /(hola|buenos d|buenas no|buenas ta|R11)/i;
+    const specificWord21 = /(hola|buenos d|buenas no|buenas ta|R11)/i;
+    const specificWord22 = /(hola|buenos d|buenas no|buenas ta|R11)/i;
+    const specificWord23 = /(hola|buenos d|buenas no|buenas ta|R11)/i;
+    const specificWord24 = /(hola|buenos d|buenas no|buenas ta|R11)/i;
+  const specificWord25 = /(directorio|telefono|teléfono|agenda|extension|Z7)/i;
+
   //Tipos de Reporte  
-  const specificWord25 = /(queja)/i;
-  const specificWord26 = /(directorio|telefono|teléfono|agenda|extension|Z7)/i;
-  const specificWord27 = /(acompañ|cuentahab|Bancario|Z9)/i;
-  const specificWord28 = /(alerta|amber)/i;
-  const specificWord29 = /(apoyo psic|psicol)/i;
-  const specificWord30 = /(asesoria ju|asesoría ju|juridica|jurídica)/i;
-  const specificWord31 = /(asistencia ciber|asistencia cyber|policia ciber|policía ciber|cibern)/i;
-  const specificWord32 = /(cia integral|para pers|discapaci|tarjetón|tarjeton)/i;
-  const specificWord33 = /(brigada|animal|bva)/i;
-  const specificWord34 = /(broma)/i;
-  const specificWord35 = /(camara|cámara|videos)/i;
-  const specificWord36 = /(en el trans|transporte|publico|público)/i;
-  const specificWord37 = /(extors)/i;
-  const specificWord38 = /(felicita)/i;
-  const specificWord39 = /(insult|altisonan)/i;
-  const specificWord40 = /(orientacion|orientación)/i;
-  const specificWord41 = /(contra p|policias|policías|servidores p|elemen|oficial|custodio|Pol Bancar|Policia Bancar|Policía Bancar|PBI|Pol Aux|Policia Aux|Policía Aux|servidor|Z10)/i;
-  const specificWord42 = /(queja seg|queja de seg|seguridad privada|privada)/i;
-  const specificWord43 = /(robo|X6)/i;
-  const specificWord44 = /(con violen)/i;
-  const specificWord45 = /(sin violen|X5)/i;
-  const specificWord46 = /(trabajo so|social)/i;
-  const specificWord47 = /(venta|droga)/i;
-  const specificWord48 = /(vigilancia)/i;
-  const specificWord49 = /(violencia|X8)/i;
-  const specificWord50 = /(patrull|envio p|envío|envio u|envío u)/i;
-  const specificWord51 = /(activación|activacion|alarma)/i;
-  const specificWord52 = /(amenaza de|bomba|X10)/i;
-  const specificWord53 = /(arrancones)/i;
-  const specificWord54 = /(derrame|aceite)/i;
-  const specificWord55 = /(enjambre)/i;
-  const specificWord56 = /(explosion|explosión)/i;
-  const specificWord57 = /(fuga|de gas)/i;
-  const specificWord58 = /(incendio|X11)/i;
-  const specificWord59 = /(rescate|urbano)/i;
-  const specificWord60 = /(cadaver|cádaver|muert|occis|fallecid|Z1)/i;
-  const specificWord61 = /(ebrio|borrach|alcohol)/i;
-  const specificWord62 = /(entrevista|ciudadana)/i;
-  const specificWord63 = /(escadal)/i;
-  const specificWord64 = /(franele)/i;
-  const specificWord65 = /(franele)/i;//
-  const specificWord66 = /(blanca|cuchillo|puña|X12)/i;
-  const specificWord67 = /(fuego|arma|pistola|X13)/i;
-  const specificWord68 = /(atropella|Z3)/i;
-  const specificWord69 = /(caida|caída)/i;
-  const specificWord70 = /(por golpes)/i;
-  const specificWord71 = /(drogando|drogándo)/i;
-  const specificWord72 = /(de calle|vagabund|indigent|mendig)/i;
-  const specificWord73 = /(riña|pelea|disputa|Z4)/i;
-  const specificWord74 = /(secuestro|X7)/i;
-  const specificWord75 = /(sospechoso|X4)/i;
-  const specificWord76 = /(tala|arbol|árbol)/i;
-  const specificWord77 = /(K7)/i;
-  const specificWord78 = /(K5)/i;
-  const specificWord79 = /(K3)/i;
-  const specificWord80 = /(K2)/i;
-  const specificWord81 = /(K1)/i;
-  const specificWord82 = /(calidad|de vida)/i;
-  const specificWord83 = /(choque|Z6)/i;
-  const specificWord84 = /(con les)/i;
-  const specificWord85 = /(sin les)/i;
-  const specificWord86 = /(circulac)/i;
-  const specificWord87 = /(hoy )/i;
-  const specificWord88 = /(infraccio|multa|fotomult)/i;
-  const specificWord89 = /(obstrucc)/i;
-  const specificWord90 = /(semaforo|semáforo)/i;
-  const specificWord91 = /(vialidad y|transito|tránsito)/i;
-  const specificWord92 = /(lesionado|ERUM|Z2)/i;
-  
+  const specificWord26 = /(acompañ|cuentahab|Bancario)/i;
+  const specificWord27 = /(alerta|amber)/i;
+  const specificWord28 = /(apoyo psic|psicol)/i;
+  const specificWord29 = /(asesoria ju|asesoría ju|juridica|jurídica)/i;
+  const specificWord30 = /(asistencia ciber|asistencia cyber|policia ciber|policía ciber|cibern)/i;
+  const specificWord31 = /(cia integral|para pers|discapaci|tarjetón|tarjeton)/i;
+  const specificWord32 = /(brigada|animal|bva)/i;
+  const specificWord33 = /(broma)/i;
+  const specificWord34 = /(camara|cámara|videos)/i;
+  const specificWord35 = /(en el trans|transporte|publico|público)/i;
+  const specificWord36 = /(extors)/i;
+  const specificWord37 = /(felicita)/i;
+  const specificWord38 = /(insult|altisonan)/i;
+  const specificWord39 = /(orientacion|orientación)/i;
+  const specificWord40 = /(contra p|policia|policía|servidores p|elemen|oficial|custodio|Pol Bancar|Policia Bancar|Policía Bancar|PBI|Pol Aux|Policia Aux|Policía Aux|servidor|Z10)/i;
+  const specificWord41 = /(queja seg|queja de seg|seguridad privada|privada)/i;
+  const specificWord42 = /(con violen)/i;
+  const specificWord43 = /(sin violen|X5)/i;
+  const specificWord44 = /(robo|X6)/i;
+  const specificWord45 = /(trabajo so|social)/i;
+  const specificWord46 = /(venta|droga)/i;
+  const specificWord47 = /(vigilancia)/i;
+  const specificWord48 = /(violencia|X8)/i;
+  const specificWord49 = /(patrull|envio p|envío|envio u|envío u)/i;
+  const specificWord50 = /(activación|activacion|alarma)/i;
+  const specificWord51 = /(amenaza de|bomba|X10)/i;
+  const specificWord52 = /(arrancones)/i;
+  const specificWord53 = /(derrame|aceite)/i;
+  const specificWord54 = /(enjambre)/i;
+  const specificWord55 = /(explosion|explosión)/i;
+  const specificWord56 = /(fuga|de gas)/i;
+  const specificWord57 = /(incendio|X11)/i;
+  const specificWord58 = /(rescate|urbano)/i;
+  const specificWord59 = /(cadaver|cádaver|muert|occis|fallecid|Z1)/i;
+  const specificWord60 = /(ebrio|borrach|alcohol)/i;
+  const specificWord61 = /(entrevista|ciudadana)/i;
+  const specificWord62 = /(escadal)/i;
+  const specificWord63 = /(franele)/i;
+  const specificWord64 = /(blanca|cuchillo|puña|X12)/i;
+  const specificWord65 = /(fuego|arma|pistola|X13)/i;
+  const specificWord66 = /(atropella|Z3)/i;
+  const specificWord67 = /(caida|caída)/i;
+  const specificWord68 = /(por golpes)/i;
+  const specificWord69 = /(drogando|drogándo)/i;
+  const specificWord70 = /(de calle|vagabund|indigent|mendig)/i;
+  const specificWord71 = /(riña|pelea|disputa|Z4)/i;
+  const specificWord72 = /(secuestro|X7)/i;
+  const specificWord73 = /(sospechoso|X4)/i;
+  const specificWord74 = /(tala|arbol|árbol)/i;
+  const specificWord75 = /(calidad|de vida)/i;
+  const specificWord76 = /(con les)/i;
+  const specificWord77 = /(sin les)/i;
+  const specificWord78 = /(circulac|vuelta prohib)/i;
+  const specificWord79 = /(no circul)/i;
+  const specificWord80 = /(infraccio|multa|fotomult|foto multa|deposito vehi|depósito veh|exceso de velocidad|parquimetr|parquímetr)/i;
+  const specificWord81 = /(obstrucc|estacionado en vía p|estacionado en via p)/i;
+  const specificWord82 = /(semaforo|semáforo)/i;
+
+  //Especificaciones  
+  const specificWord83 = /(vialidad y t)/i;
+  const specificWord84 = /(lesionado|ERUM|Z2)/i;
+  const specificWord85 = /(queja)/i;
+  const specificWord86 = /(choque|Z6)/i;
+  const specificWord87 = /(no|muchas|gracia|enterado|entendido|R10|R2|X3|R5|K4)/i;
+  const specificWord88 = /(diagrama|de flujo)/i;
 
 
 
@@ -355,6 +353,8 @@ const setQuestionNumber = (userMessage) => {
     questionNum = 91;
   } else if (specificWord92.test(userMessage)) {
     questionNum = 92;
+  } else if (specificWord93.test(userMessage)) {
+    questionNum = 93;
                                             
                                             
   } else {
@@ -383,7 +383,7 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Nuestro número telefónico es:\n55 5209 9898\n\nCon servicio los 365 días del año, las 24 horas del día";
             
 
@@ -393,7 +393,7 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "La extensión de Asuntos Internos es: 1121, 1122 y 1160";
 
     case 3:
@@ -402,7 +402,7 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "El número telefónico de Brigada de Vigilancia Animal es: 55 6300 8771\n\nSubdirección de Programas de Prevención del Delito Ext. 5030 y 5727";
 
 
@@ -412,7 +412,7 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "La extensión de la Policía Cibernética es: 5086 (para reportes) y 5666 (pláticas informativas de prevención)\n\nTambién reciben denuncias por medio de Twitter #CiberneticaCDMX ó a través, al correo policia.cibernetica@ssc.cdmx.gob.mx ó prevencion.cibernetica@ssc.cdmx.gob.mx";
 
     case 5:
@@ -421,7 +421,7 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Contacto con la Dirección General de Derechos Humanos: 55 5442 5303";
 
     case 6:
@@ -430,7 +430,7 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "La línea directa de Atención de la Dirección de Manejo de Crisis y Negociación es: 55 5242 5034";  
 
     case 7:
@@ -439,7 +439,7 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Dirección General de Seguridad Privada y Colaboración Interinstitucional\nExt. 5258 y 5631\n\nUbicación: Ermita No.5 Piso 2, Col. Narvarte Poniente, Benito Juárez, C.P. 02030";  
 
     case 8:
@@ -448,7 +448,7 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
     return "La extension de la Unidad Especializada de Género es: 4974 y 4970";  
 
     case 9:
@@ -463,7 +463,7 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
     return "Claro, el número telefónico de la PAOT es:\n55 5265 0780 ext. 15430, 15440, 15450 y 15410";  
 
    case 10:
@@ -472,7 +472,7 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
     return "Dirección de Combate a Narcomenudeo y Delitos Conexos de la Dirección General de Investigación de Delitos de Mayor de la SSC Ext. 5409\n\nUbicación: Liverpool 136, 2° piso, Colonia Juárez, Cuauhtémoc, C.P. 06000";  
 
     case 11:
@@ -481,7 +481,7 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
     return "El número telefónico de Fuerza de Tarea es: 55 5845 6919 y 55 5845 8736\n\nUbicación: Calle Leandro Valle, PB, Colonia Del Mar, Tláhuac. C.P.13270, Ciudad de México";  
 
     case 12:
@@ -490,7 +490,7 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
     return "El número telefónico de Bomberos es:\n55 5764 4102\n\nUbicación: Avenida Fray Servando Teresa de Mier, Colonia Merced Balbuena, Venustiano Carranza, C.P. 15810, Ciudad de México";  
 
     case 13:
@@ -499,66 +499,11 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
     return "Claro, el número telefónico de Protección Civil es:\n55 563 2222\n\nUbicación: Calle Abraham González 67, Colonia Juárez, Cuauhtémoc C.P. 06600, Ciudad de México\n\nCorreo electrónico: atencion.ciudadana.sgirpc@cdmx.gob.mx";  
 
-    case 14:
-      return "Persona?, Podrías ser más específico, por favor?";  
-
-    case 15:
-      return "Delincuente?, Podrías especificar por favor?";  
-
-    case 16:
-      return "Comisión?, Podrías ser más específico, por favor?";  
-
-    case 17:
-      return "Posición?, Podrías especificar por favor?";    
-
-    case 18:
-      return "Detenido?, Podrías ser más específico, por favor?";    
-
-    case 19:
-      return "Claro, puedo repetir el mensaje, menciona sobre que tema tienes duda";  
-
-    case 20:
-      return "¿Qué deseas que investiguemos?";  
-
-    case 21:
-      return "Por el momento no presento alguna falla mecánica pero gracías por preguntar, te puedo apoyar en algo más?:";  
-
-    case 22:
-      return "Fuerte y claro, requieres más apoyo?";  
-
-    case 23:
-      return "Es un gusto ayudarte, estoy a tu servicio, si me necesitas estaré por aquí";  
     
-    //Asignados
-    case 24:
-      setTimeout(() => {
-        const response = "[Haz click para abrir Diagramas]";
-        const entranteChatLi = createChatLi4(response, "entrante");
-        chatbox.appendChild(entranteChatLi);
-        chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 100);
-      setTimeout(() => {
-        const response = "¿Requieres algo más?";
-        const entranteChatLi = createChatLi(response, "entrante");
-        chatbox.appendChild(entranteChatLi);
-        chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
-      return "Por supuesto, te puedo mostrar algunos diagramas"; 
-
     case 25:
-      setTimeout(() => {
-        const response = "Podrías especificar que tipo queja (policías, custodios, seguridad privada, servidores públicos)";
-        const entranteChatLi = createChatLi2(response, "entrante");
-        chatbox.appendChild(entranteChatLi);
-        chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 500); 
-      return "Comprendo que estás realizando un folio de Queja"; 
-  
-
-    case 26:
       setTimeout(() => {
         const response = "[Haz click para abrir el Directorio]";
         const entranteChatLi = createChatLi3(response, "entrante");
@@ -570,11 +515,12 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Por supuesto, si requieres consultar algún número telefónico lo puedes realizar aquí:";  
   
-  
-    case 27:
+    
+    //Tipos de Reporte
+    case 26:
       setTimeout(() => {
         const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Dónde se encuentra ubicado?\n •¿A que sucursal se le va a trasladar?\n •¿Cuál es la ubicación del banco?\n •¿Domicilio a donde desea ser acompañando?\n •¿Cuál es su vestimenta?\n •¿Referencias del lugar?";
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -604,11 +550,11 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Comprendo que estás realizando un folio de Acompañamiento a cuentahabiente bancario";  
 
       
-    case 28:
+    case 27:
       setTimeout(() => {
         const response = "Comienza por realizar las siguientes preguntas:\n Datos del contacto:\n • Nombre\n • Teléfono\n • Edad\n • Domicilio\n • Relación con la persona extraviada, ausente o sustraída."; 
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -656,11 +602,11 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Comprendo que estás realizando un folio de Alerta Amber";  
   
   
-    case 29:
+    case 28:
       setTimeout(() => {
         const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Cuál es la situación?\n •¿Hace cuánto tiempo se encuentra en dicha situación?";
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -690,11 +636,11 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Comprendo que estás realizando un folio de Apoyo Psicológico";  
 
       
-    case 30:
+    case 29:
       setTimeout(() => {
         const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Situación por la que requiere la asesoría?\n •¿Desde hace cuánto se llevan a cabo los hechos?";
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -724,10 +670,10 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Comprendo que estás realizando un folio de Asesoría Jurídica";    
 
-    case 31:
+    case 30:
       setTimeout(() => {
         const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Motivo por el cual desea realizar su reporte?\n •¿Cuál es la red social en la que se llevan a cabo los hechos?\n •¿Hace cuánto tiempo inicio la situación?\n •¿Conoce a los agresores?";
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -757,11 +703,11 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Comprendo que estás realizando un folio de Asistencia Cibernética";    
 
 
-    case 32:
+    case 31:
       setTimeout(() => {
         const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Domicilio del usuario?\n •¿Cuál es la información o servicio que requiere?\n •¿Tipo de discapacidad?\n •¿Cuenta con el certificado de discapacidad?\n •¿Quién le expide el certificado de discapacidad?";
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -791,11 +737,11 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Comprendo que estás realizando un folio de Asistencia Integral para Personas con Discapacidad";    
 
           
-    case 33:
+    case 32:
       setTimeout(() => {
         const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Qué tipo de animal es? (domésticos perro, gato etc.)\n • ¿En qué condiciones se encuentra el animal? (sano, herido)\n • ¿Tienen alguna marca en particular?\n • ¿El animal porta alguna identificación? (placa, registro, otra)\n • Características del animal (nombre, raza, tamaño, color, características especiales (manchas, rayas, otras).";
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -825,11 +771,11 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Comprendo que estás realizando un folio de Brigada de Vigilancia Animal";    
 
 
-    case 34:
+    case 33:
       setTimeout(() => {
         const response = "Genera el folio con la mayor información con la que cuentes.\nEs necesario registrar el número telefónico y marcar si se trata de un usuario recurrente.";
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -841,11 +787,11 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Comprendo que estás realizando un folio relacionado a una llamada de Broma";    
 
 
-    case 35:
+    case 34:
       setTimeout(() => {
         const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n • Domicilio del solicitante\n • Domicilio donde requiere la instalación, reubicación, reparación, botón de panico o auxilio, alerta sísmica ó altavoz?\n • Referencias del lugar con planos\n •¿Motivo por el cuál la requiere?";
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -875,11 +821,11 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Comprendo que estás realizando un folio de Cámaras de Vigilancia";    
 
 
-    case 36:
+    case 35:
       setTimeout(() => {
         const response = "Comienza por solicitar al usuario que conserve la calma y realiza las siguientes preguntas:\n • Datos del usuario\n •¿Se encuentran los asaltantes en el lugar?\n •¿Cuántos son?\n •¿Están armados?\n •¿Tipo de arma? Fuego, blanca, otra (especifique).\n •¿Hay lesionados?\n •¿Cuántos?\n •¿Tipo de lesiones?\n •¿Están consientes?\n •¿Qué le robaron?\n •¿Los asaltantes viajaban en algún vehículo?\n •¿En qué dirección huyeron?\n •¿Características del o los vehículos? (tipo de vehículo, marca, submarca, placas, modelo, color)\n •¿Características físicas de los asaltantes? (estatura, complexión, color de cabello, tatuajes\n •¿Qué tipo de transporte público es? (taxi, autobús, trolebús, metro, metrobus, microbús, combi, etc.)\n •Características del transporte público agredido (placas, ruta, marca, modelo, color)";
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -909,11 +855,11 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Comprendo que estás realizando un folio relacionado a Denuncia en el Transporte Público";   
 
           
-    case 37:
+    case 36:
       setTimeout(() => {
         const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n • Determinar que tipo de extorsión le realizan al denunciante\n •¿Le dicen que se ganó un premio?\n •¿Dice ser un familiar que viaja y necesita que le mande dinero?\n •¿Es una voz que le dice a gritos que lo tienen secuestrado?\n •¿Es una voz que le dice que secuestraron a su familiar?\n •¿Es una voz que lo amenaza con causar daño a bienes o familiares?\n •¿Quién está supuestamente secuestrado?\n •¿Cuándo fue la última vez que lo vieron?\n •¿Ya se comunico con el familiar supuestamente secuestrado?\n •¿Le piden dinero o tarjetas telefónicas?\n •¿A que Institución Bancaria le solicitan el depósito?\n •¿A qué número de cuenta le piden que deposite?\n •¿Qué monto en dinero o especie le solicitan?\n •¿Qué compañía telefónica le requieren tarjetas?\n •¿Le mencionan que alguna autoridad detuvo a su familiar que viene del extranjero?\n •¿De que dependencia es?\n •¿Qué cargo tiene?\n •¿Cuál es el nombre?\n •¿Qué monto en dinero o especie le solicitan?";
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -943,11 +889,11 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Comprendo que estás realizando un folio referente a Extorsión";    
 
 
-    case 38:
+    case 37:
       setTimeout(() => {
         const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n • Datos específicos del oficial\n •¿Sector o Agrupamiento al que pertenece?\n •¿Fechas en que proporciono el apoyo?\n •¿Motivo por el cual quiere manifestar sus felicitaciones?\n •¿Ubicación donde se llevaron a cabo los hechos?";
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -977,13 +923,13 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Comprendo que estás realizando un folio de Felicitaciones";    
     
     
-    case 39:
+    case 38:
       setTimeout(() => {
-        const response = "No contestes la agresión y finaliza la llamada conforme al protocolo.\nGenera el folio con la mayor información con la que cuentes.\nEs necesario registrar el número telefónico y marcar si se trata de un usuario recurrente.";
+        const response = "No devuelvas la agresión y finaliza la llamada conforme al protocolo.\nGenera el folio con la mayor información con la que cuentes.\nEs necesario registrar el número telefónico y marcar si se trata de un usuario recurrente.";
         const entranteChatLi = createChatLi2(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
@@ -993,11 +939,11 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Comprendo que estás realizando un folio relacionado a Insultos/Palabras altisonantes";  
 
 
-    case 40:
+    case 39:
       setTimeout(() => {
         const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Cuál es la información que requiere?";
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -1027,11 +973,11 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Comprendo que estás realizando un folio de Orientación al Público";   
 
 
-    case 41:
+    case 40:
       setTimeout(() => {
         const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿En qué dependencia se encuentra?\n •¿Conoce el nombre de la persona?\n •¿Qué puesto está usurpando?\n •¿Porta alguna credencial que lo identifique?\n •¿Le está solicitando algo a cambio de algún servicio?\n •¿Va acompañado?\n •¿Cuántos son?\n •¿Van en algún vehículo? (placas, marca, submarca, modelo, color).\n •¿Tiene logos de alguna dependencia?";
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -1061,11 +1007,11 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Comprendo que estás realizando un folio de Queja contra Policía y Servidores Públicos";   
 
 
-    case 42:
+    case 41:
       setTimeout(() => {
         const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Cuáles son los datos del usuario?\n •¿Nombre del oficial de seguridad privada?\n •¿Nombre de la empresa?\n •¿Domicilio y ubicación exacta del lugar de los hechos?\n •¿Descripción de los hechos que constituyan las probables omisiones o irregularidades?\n •¿Fecha en que se llevaron a cabo los hechos?";
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -1095,22 +1041,11 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Comprendo que estás realizando un folio de Queja Seguridad Privada"; 
 
 
-    case 43:
-      setTimeout(() => {
-        const response = "¿Podrías especificar si es robo con violencia o robo sin violencia?";
-        const entranteChatLi = createChatLi2(response, "entrante");
-        chatbox.appendChild(entranteChatLi);
-        chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 500); 
-
-      return "Comprendo que estás realizando un folio de Robo"; 
-
-            
-    case 44:
+    case 42:
       setTimeout(() => {
         const response = "Comienza por solicitar al usuario que conserve la calma y realiza las siguientes preguntas:\n • Datos del usuario\n •¿Se encuentran ahí los delincuentes?\n • ¿A qué auto le robaron las piezas? (Tipo de vehículo, placas, marca, submarca, modelo, color)\n •¿A qué hora presumiblemente fue el robo?\n •¿Qué fue lo que le robaron?\n •¿Alguna persona vió a los sospechosos?\n •¿Iban en algún vehículo?\n •¿Características del vehículo? (placas, marca, submarca, modelo, color)\n •¿En qué dirección huyeron?\n •¿Características físicas de los asaltantes? (estatura, complexión, color de cabello, tatuajes, cicatrices, tipo y color de vestimenta.)";
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -1140,11 +1075,11 @@ const generateResponse = (userMessage) => {
         const entranteChatLi = createChatLi(response, "entrante");
         chatbox.appendChild(entranteChatLi);
         chatbox.scrollTo(0, chatbox.scrollHeight);
-      }, 2000); 
+      }, 1000); 
       return "Para Robo con violencia"; 
 
 
-    case 45:
+    case 43:
       setTimeout(() => {
         const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Se encuentran los asaltantes en el lugar?\n •¿Cuántos son?\n •¿Están armados?\n •¿Tipo de arma?\n •Fuego, blanca, otra (especifique).\n •¿Usted se encuentra bien?\n •¿Es usted el afectado?\n •¿Hay lesionados?\n •¿Cuántos?\n •¿Tipo de lesiones?\n •¿Están consientes?\n •¿Los asaltantes viajan en algún vehículo?\n •¿En qué dirección huyeron?\n •¿Características del o los vehículos? (placas, marca, submarca, modelo, color)\n •¿Características físicas de los asaltantes? (estatura, complexión, color de cabello, color de piel, tatuajes, cicatrices, tipo y color de vestimenta)";
         const entranteChatLi = createChatLi2(response, "entrante");
@@ -1174,11 +1109,22 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
       return "Para Robo sin violencia"; 
 
 
-      case 46:
+      case 45:
+        setTimeout(() => {
+          const response = "¿Podrías especificar si es robo con violencia o robo sin violencia?";
+          const entranteChatLi = createChatLi2(response, "entrante");
+          chatbox.appendChild(entranteChatLi);
+          chatbox.scrollTo(0, chatbox.scrollHeight);
+        }, 500); 
+  
+        return "Comprendo que estás realizando un folio de Robo"; 
+
+
+      case 45:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Situación por la que requiere la asesoría?\n •¿Desde hace cuánto se llevan a cabo los hechos?\n •Identificar si se trata de una llamada genuina";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1208,11 +1154,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Trabajo Social"; 
 
 
-      case 47:
+      case 46:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Se encuentran en vía pública?\n •¿Cuántos son?\n •¿Sabe si están armados?\n •¿En donde se realiza la venta?\n •¿Conoce que tipo de droga se vende?\n •¿A qué hora venden?\n •¿Cuáles son las características del lugar donde se comercializa?\n •¿Tienen en algún vehículo?(placas, marca, submarca, modelo, color).\n •¿Conoce si alguien les entrega el producto?\n •¿Conoce a los involucrados?(nombre o alias)\n •¿Características de los involucrados?(estatura, complexión, color de cabello, tatuajes, cicatrices, tipo y color de vestimenta)";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1242,11 +1188,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio relacionado a Venta de Droga"; 
 
 
-      case 48:
+      case 47:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Ubicación donde requiere la vigilancia?\n •¿Qué tipo de vigilancia requiere (pie tierra, patrullaje, policías en bicicleta, motopatrullas, etc.?\n •¿A qué hora del día requiere la vigilancia?\n •¿Motivo por la que la requiere?";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1276,11 +1222,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Vigilancia"; 
 
 
-      case 49:
+      case 48:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Es usted el agredido?\n •¿Está en peligro su vida?\n •¿Se encuentran ahí los agresores?\n •¿Cuántos son?\n •¿Están armados?\n •¿Tipo de arma?\n •Fuego, blanca, otra (especifique).\n •¿Hay lesionados?\n •¿Cuántos?\n •¿Tipo de lesiones?\n •¿Están consientes?\n •¿Tipo de maltrato? (físico, psicológico, discriminación, etc.).\n •¿Características de la(s) persona(s) agredida(s)? (edad, estatura, complexión, color de cabello, tipo y color de vestimenta, grupo étnico (si aplica), discapacidades (si aplica), etc.).\n •¿Parentesco de la víctima con el responsable?\n •¿Qué tipo de agresión es? (Física, verbal, psicológica, discriminación, otra especifique).\n •¿A qué se debe la agresión?\n •¿Conoce a los agresores? (nombre o alias)\n •¿Características de los responsables? (estatura, complexión, color de cabello, tatuajes, cicatrices, tipo y color de vestimenta.)";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1310,11 +1256,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Violencia";             
 
 
-      case 50:
+      case 49:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Se encuentra bien?\n •¿A qué se debe su petición?\n •¿Cuál es la solicitud expresa?\n •¿Alguna referencia donde se encuentre?";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1344,11 +1290,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla"; 
 
 
-      case 51:
+      case 50:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Ubicación donde requiere del apoyo?\n •¿Referencias del lugar de los hechos?\n •¿Hay personas en el lugar?\n •¿El establecimiento de encuentra en servicio?";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1378,11 +1324,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Activación de alarma"; 
 
 
-      case 52:
+      case 51:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n • HAGA QUE REPITA LA AMENAZA.\n •HAGA QUE HABLE MÁS FUERTE Y MÁS DESPACIO.\n •ESCRIBA LO MÁS FIELMENTE POSIBLE EL MENSAJE DE LA AMENAZA.\n •¿Cuándo va a explotar el artefacto explosivo?\n •¿Dónde fue colocado? Escuela, edificio (público ó privado) piso, departamento, etc.\n •¿Qué tipo de artefacto es? (especificación técnica)\n •¿En qué objeto se encuentra? (Automóvil, bolsa, caja, mochila, otro (especifique))\n •¿Colocó usted el artefacto?\n •¿Cuál es su nombre o Alias?\n •¿A qué organización pertenece?\n •¿Por qué razón fue colocado?\n •Identifique el sexo y rango de edad del denunciante (masculino, femenino, niño, adolescente, adulto, adulto mayor)\n •Identifique las características de la voz:\nLenguaje: (excelente, regular, mal hablado)\nAcento: (local D.F., Norteño, costeño, extranjero).\nForma de hablar: (rápido, lento, alto, bajo, distorsionado)\nIdentifique el comportamiento: (calmado, nervioso, enojado, riéndose, incoherente).\nIdentifique ruidos de fondo: (maquinas de oficina, fábrica, animales, tráfico urbano, trenes, voces, música, etc.)\n\nSi no el es amenazante quien llama, solicite hablar con quien recibió la llamada de la amenaza y realice las preguntas de esta instrucción de trabajo.";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1412,11 +1358,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Amenaza de bomba"; 
 
 
-      case 53:
+      case 52:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Se encuentran en este momento practicando arrancones?\n •¿Cuántos autos o motos participan?\n •¿Características del los vehículos? (marca, submarca, modelo, color, placas)\n •¿Cuántas personas están involucradas?\n •¿Conoce a las personas que lo practican?\n •¿Sabe los nombres o Alias?\n •¿Características físicas de los involucrados?\n •¿Están ebrios o drogados?\n •¿Cada cuando lo practican?";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1446,11 +1392,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Arrancones"; 
 
 
-      case 54:
+      case 53:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Conoce de que sustancia se trata?\n •¿Qué características físicas tiene la sustancia? (Liquido, Gas, Polvos)\n •¿Hacia dónde se fuga la sustancia? o Aire ambiental (¿huele a algo en particular? o Piso, drenaje o ríos)\n •¿En donde es la fuga? (fábrica, transporte, comercio, casa habitación, vía pública).\n •Fábrica ¿Cuál es la Razón Social de la empresa o fábrica)\n •Transporte ¿Qué tipo de vehículo es? (Particular, transportista, pipa, etc.).\n •¿Características del vehículo? (marca, submarca, modelo, color).\n •¿Tiene a la vista el rombo de colores que lleva el camión o pipa? ¿Qué colores y que números lleva el rombo?\n •¿Hay lesionados en el lugar?\n •¿Cuántos?\n •¿Consientes o inconscientes?\n •¿Hay zonas de riesgo a su al derredor? (escuelas, gasolineras, zonas de concentración de personas).\n •¿Tiene idea de que ocasionó la fuga?";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1480,11 +1426,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Bomberos - Derrame de Aceite"; 
 
 
-      case 55:
+      case 54:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿El enjambre es de abejas o de avispas?\n •¿En donde se encuentra ubicado exactamente el enjambre?\n •¿De dónde se sostiene?\n •¿Cuánto tiempo tiene ahí?\n •¿A qué altura se encuentra?\n •¿Aproximadamente de que tamaño es el panal? (determinar Volumen no cantidad)\n •¿Las abejas / avispas manifiestan alboroto?\n •¿Hay personas lesionadas / picadas por el enjambre";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1514,11 +1460,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Bomberos - Enjambre"; 
 
 
-        case 56:
+        case 55:
           setTimeout(() => {
             const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Qué explotó?\n •¿Artefacto Explosivo (Bomba)?\n •¿Granada?\n •¿Dinamita?\n •¿Explosivo Plástico?\n •¿Industria? ¿Qué fabrica o procesa?\n •¿Laboratorio?\n •¿Cocina?, ¿Horno?, ¿Estufa?\n •¿Pirotecnia (Cuetes)?\n •¿Dónde fue la explosión?\n Vía Pública\n Casa habitación\n Escuela\n Comercio / Oficina / Industria\n •¿Fue visible la explosión o solo e escuchó?\n •¿Están habiendo mas explosiones?\n •¿Hay Lesionados?\n •¿Cuántos?\n •¿Alguno perdió la vida?\n •¿Hay daños a las edificaciones cercanas a lugar de la explosión?\n •¿Hay incendio posterior a la explosión?\n •¿Qué hay a su alrededor? (baldíos, casas, escuelas, oficinas, fabricas, negocios, tanques de Gas)";
             const entranteChatLi = createChatLi2(response, "entrante");
@@ -1548,11 +1494,11 @@ const generateResponse = (userMessage) => {
             const entranteChatLi = createChatLi(response, "entrante");
             chatbox.appendChild(entranteChatLi);
             chatbox.scrollTo(0, chatbox.scrollHeight);
-          }, 2000); 
+          }, 1000); 
           return "Comprendo que estás realizando un folio de Envío de Patrulla - Bomberos - Explosión"; 
 
 
-      case 57:
+      case 56:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿En qué lugar se encuentra la fuga? (casa, oficina, escuela, vía pública, fábrica, área recreativa, negocios, otro)\n •¿Identifica donde se localiza la fuga o el olor a gas? (cilindro, etc.)\n •¿Qué hay a su alrededor? (casa, oficina, escuela, vía pública, fábrica, área recreativa, negocios, otro).\n •¿Hay Intoxicados y/o lesionados? ¿Cuántos?";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1582,11 +1528,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Bomberos - Fuga de Gas"; 
 
 
-      case 58:
+      case 57:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Qué se está quemando?\n •¿Casa habitación?\n •¿Departamento?\n •¿Hace cuanto tiempo empezó?\n •¿Hay personas dentro? ¿Cuántas estima?\n Lesionados\n •¿Cuántos?\n •¿Tipo de lesiones?\n •¿Alguno perdió la vida?\n •¿Las llamas son visibles?\n •¿Altura aproximada de las llamas?\n •¿Color y tipo de humo?\n •¿Conoce las causas?\n •¿Está en riesgo de propagarse?\n •¿Qué hay a su alrededor? (baldíos, casas, escuelas, fabricas, negocios, tanques de Gas)\n •¿se está obstruyendo la Vialidad";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1616,11 +1562,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Bomberos - Incendio"; 
 
 
-        case 59:
+        case 58:
           setTimeout(() => {
             const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Qué tipo de catástrofe o desastre es?\n •¿Hay lesionados en el lugar?\n •¿Hay cadáveres en el lugar?\n •¿Hay alguna fuga de gas en el lugar?\n •¿Hay alguna fuga de agua en el lugar?\n •¿Requiere algún apoyo adicional en el lugar?";
             const entranteChatLi = createChatLi2(response, "entrante");
@@ -1650,11 +1596,11 @@ const generateResponse = (userMessage) => {
             const entranteChatLi = createChatLi(response, "entrante");
             chatbox.appendChild(entranteChatLi);
             chatbox.scrollTo(0, chatbox.scrollHeight);
-          }, 2000); 
+          }, 1000); 
           return "Comprendo que estás realizando un folio de Envío de Patrulla - Bomberos - Rescate Urbano"; 
 
 
-      case 60:
+      case 59:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Cuántos cadáveres hay en el lugar?\n •Sexo y edad aproximada del (los) cadáver(es).\n •¿Cuánto tiempo tiene que falleció?\n •¿Hay olor fétido y/o descomposición?";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1684,12 +1630,12 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Cádaver"; 
 
 
 
-      case 61:
+      case 60:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Ubicación exacta del lugar de los hechos?\n •¿Cuantas personas hay en el lugar?\n •¿Características de los probables infractores?\n •¿Se encuentra a bordo de algún vehículo?";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1719,11 +1665,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Ebrios"; 
 
 
-      case 62:
+      case 61:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Quién es el afectado?\n •¿Está en peligro su vida?\n •¿Se encuentran ahí los detenidos?\n •¿Cuántos son?\n •¿Están armados?\n •¿Tipo de arma? Fuego, blanca, otra (especifique).\n •¿Hay lesionados?\n •¿Cuántos?\n •¿Tipo de lesiones?\n •¿Están consientes?\n •¿Por qué se realizó la detención? (robo, agresión, fraude, etc.)\n •¿Hubo agresiones?\n •¿Conoce a los agresores? (nombre o alias)\n •¿Características de los agresores? (estatura, complexión, color de cabello, tatuajes, cicatrices, tipo y color de vestimenta.)";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1753,11 +1699,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Entrevista Ciudadana"; 
 
 
-      case 63:
+      case 62:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Se encuentran en vía pública?\n •Si es en interior, ¿qué tipo de inmueble?\n •¿Están en algún vehículo? (marca, sub marca, placas, modelo, color).\n •¿Cuántas personas son aproximadamente?\n •¿Tipo de escándalo? (fiesta, música alta, gritos, otros)\n •¿Conoce a los involucrados? (nombre o alias)\n •¿Características de los involucrados? (estatura, complexión, color de cabello, tatuajes, cicatrices, tipo y color de vestimenta)\n •¿Están agrediendo a alguien?\n •¿Qué tipo de agresión es? (Física, verbal, psicológica, otra especifique).\n •¿Están armados?\n •¿Tipo de arma? Fuego, blanca, otra (especifique).";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1787,11 +1733,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Escandalizar"; 
 
 
-      case 64:
+      case 63:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Ubicación exacta del lugar de los hechos?\n •¿Cuantas personas hay en el lugar?\n •¿Características de los probables infractores?\n •¿Referencias del lugar?";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1821,45 +1767,12 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Franeleros"; 
 
 
-        case 64:
-          setTimeout(() => {
-            const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Ubicación exacta del lugar de los hechos?\n •¿Cuantas personas hay en el lugar?\n •¿Características de los probables infractores?\n •¿Referencias del lugar?";
-            const entranteChatLi = createChatLi2(response, "entrante");
-            chatbox.appendChild(entranteChatLi);
-            chatbox.scrollTo(0, chatbox.scrollHeight);
-          }, 100); 
-          setTimeout(() => {
-            const response = "Las puestas a disposición de los infractores serán a petición de parte.";
-            const entranteChatLi = createChatLi2(response, "entrante");
-            chatbox.appendChild(entranteChatLi);
-            chatbox.scrollTo(0, chatbox.scrollHeight);
-          }, 200); 
-          setTimeout(() => {
-            const response = "Recomienda al usuario:\n • No enfrentar a los probables infractores\n • Mantenerse en un lugar seguro";
-            const entranteChatLi = createChatLi2(response, "entrante");
-            chatbox.appendChild(entranteChatLi);
-            chatbox.scrollTo(0, chatbox.scrollHeight);
-          }, 300); 
-          setTimeout(() => {
-            const response = "Se canaliza a: Jefe de Cuadrante\n\nSi requieres más información puedes consultar el Anexo 17";
-            const entranteChatLi = createChatLi2(response, "entrante");
-            chatbox.appendChild(entranteChatLi);
-            chatbox.scrollTo(0, chatbox.scrollHeight);
-          }, 400); 
-          setTimeout(() => {
-            const response = "¿Puedo brindarte más detalles o aclaraciones?";
-            const entranteChatLi = createChatLi(response, "entrante");
-            chatbox.appendChild(entranteChatLi);
-            chatbox.scrollTo(0, chatbox.scrollHeight);
-          }, 2000); 
-          return "Comprendo que estás realizando un folio de Envío de Patrulla - Franeleros"; 
 
-
-      case 66:
+      case 64:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Cuantos lesionados hay en el lugar?\n •¿Concientes o inconcientes?\n •Sexo y edad aproximada del o los lesionados.\n •¿Alguno perdió la vida?\n •¿Qué tipo de arma causó la lesión de la persona? (picahielo, cuchillo, navaja, machete, espada)\n •¿Intento de suicidio?\n •¿Como trató de quitarse la vida?\n •¿Aún persiste en el intento?\n •Arma De Fuego (Cambia motivo a por arma de fuego)\n •¿Se encuentra en el lugar el responsable de haber causado la lesión?\n •Si se dio a la fuga, ¿En qué dirección huyo?\n •Características del Responsable (sexo, complexión, color de cabello, tipo y color de vestimenta).";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1889,11 +1802,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Para folios del tipo de reporte Envío de Patrulla - Lesionados (ERUM) - Por arma blanca"; 
 
 
-      case 67:
+      case 65:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Continúan los disparos?\n •¿Por qué motivo fue la agresión?\n •¿Cuántos lesionados hay en el lugar?\n •¿Consientes o inconscientes?\n •Sexo y edad aproximada del o los lesionados.\n •¿Alguno perdió la vida?\n •¿Qué tipo de arma causó la lesión de la persona? (Arma Corta (pistola) Arma Larga (Fusil, metralleta, escopeta)\n •¿Se encuentra en el lugar el responsable de haber causado los disparos?\n •¿Cuántas personas son?\n •Si se dió a la fuga, ¿En qué dirección huyo?\n •Características del Responsable (sexo, complexión, color de cabello, tipo y color de vestimenta). ";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1923,10 +1836,10 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Para folios del tipo de reporte Envío de Patrulla - Lesionados (ERUM) - Por arma de fuego"; 
 
-      case 68:
+      case 66:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Cuántas personas están atropelladas?\n •¿Cuántos lesionados hay en el lugar?\n •¿Consientes o inconscientes?\n •Sexo y edad aproximada del o los lesionados.\n •¿Alguno esta atrapado / prensado debajo del vehículo?\n •¿Alguno perdió la vida?\n •¿Se encuentra en el lugar el responsable?\n •Si se dio a la fuga, ¿En qué dirección huyo?\n •Características del Responsable (sexo, complexión, color de cabello, tipo y color de vestimenta).\n •¿Características del vehículo que causó el atropellamiento? (tipo de vehículo, marca, submarca, modelo, color)\n •¿Existe riesgo de que ocurran mas accidentes?\n •¿Se está obstruyendo la vialidad? ";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1956,11 +1869,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Para folios del tipo de reporte Envío de Patrulla - Lesionados (ERUM) - Por atropellamiento"; 
 
 
-      case 69:
+      case 67:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Cuántos lesionados hay en el lugar?\n •¿Consientes o inconscientes?\n •Sexo y edad aproximada del o los lesionados.\n •¿Alguno esta atrapado / prensado?\n •¿Alguno perdió la vida?\n •¿De qué altura fue la caída?\n •Metros aproximados\n •¿De dónde cayó?\n •Edificio, azotea, techo, árbol, etc.\n •¿Se encuentra en el lugar el responsable de haber causado la lesión? (si es que aplica)\n •Si se dio a la fuga, ¿En qué dirección huyo?\n •Características del Responsable (sexo, complexión, color de cabello, tipo y color de vestimenta).\n •¿Existe riesgo de que ocurran más lesiones o lesiones a más personas?";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -1990,11 +1903,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Para folios del tipo de reporte Envío de Patrulla - Lesionados (ERUM) - Por caida"; 
 
 
-      case 70:
+      case 68:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Cuántos lesionados hay en el lugar?\n •¿Consientes o inconscientes?\n •Sexo y edad aproximada del o los lesionados.\n •¿Alguno esta atrapado / prensado?\n •¿Alguno perdió la vida?\n •¿Qué causó la lesión de la persona?\n •Golpes\n •Caída (¿De que cayó? ¿De que altura cayó?)\n •Quemadura (¿Hay fuego en el lugar?)\n •¿Accidente industrial?\n •¿Accidente en Práctica Deportiva?\n •¿Mordedura o Picadura de animal? (¿Está en el lugar el animal agresor?, ¿Qué tipo de animal es?)\n •Electrocutado (¿Continúa la fuente de electricidad cerca del lesionado?)\n •¿Cortaduras? (¿Qué causó la lesión?, ¿Quién Causó la lesión?)\n •¿Intento de suicidio? (¿Cómo trató de quitarse la vida?, ¿Aún persiste en el intento?))\n •Arma Blanca (cambia motivo)\n •Arma De Fuego (Cambia motivo)\n •Enfermedad (cambia motivo)\n •Accidente automovilístico (cambia motivo)\n •¿Se encuentra en el lugar el responsable de haber causado la lesión? (si es que aplica)\n •Si se dio a la fuga, ¿En qué dirección huyo?\n •Características del Responsable (sexo, complexión, color de cabello, tipo y color de vestimenta).\n •¿Existe riesgo de que ocurran mas lesiones o lesiones a mas personas?";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -2024,11 +1937,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Para folios del tipo de reporte Envío de Patrulla - Lesionados (ERUM) - Por golpes"; 
 
 
-      case 71:
+      case 69:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Se encuentran en vía pública?\n •¿Cuántos son?\n •¿Sabe si están armados?\n •¿Están en algún vehículo? (placas, marca, submarca, modelo, color).\n •¿Conoce a los involucrados? (nombre o alias)\n •¿Características de los involucrados? ( estatura, complexión, color de cabello, tatuajes, cicatrices, tipo y color de vestimenta)";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -2058,11 +1971,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Personas drogándose"; 
 
 
-      case 72:
+      case 70:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Cuánto tiempo tiene abandonada?\n •¿Sexo y edad aproximada?\n •¿Conoce el nombre de la persona?\n •¿Esta lesionada o enferma?\n •¿Tipo de lesiones?\n •¿está conciente?\n •¿Características físicas de la persona?\n •¿Estatura? ¿Complexión?\n •¿Color de Piel?\n •¿Cabello Largo, Tipo de Corte, Color?\n •¿Rasgos faciales Cara, Ojos, Nariz, Boca, Cejas?\n •¿Señas particulares? ¿Enfermedades?\n •¿Vestimenta que vestía, color?\n •¿Se trata de una persona en situación de calle?\n •¿Padece de sus facultades mentales?\n\nOjo este motivo debe de manejar por separado EXTRAVIADO Y ABANDONADO";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -2092,11 +2005,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Personas en Situación de Calle"; 
 
 
-      case 73:
+      case 71:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n • ¿Quién es el agredido?\n • ¿Está en peligro su vida?\n • ¿Se encuentran ahí los agresores?\n • ¿Cuántos son?\n • ¿Están armados?\n • ¿Tipo de arma? Fuego, blanca, otra (especifique).\n • ¿Hay lesionados?\n • ¿Cuántos?\n • ¿Tipo de lesiones?\n • ¿Están consientes?\n • ¿Qué tipo de agresión es? (Física, verbal, psicológica, otra especifique).\n • ¿A qué se debe la agresión?\n • ¿Conoce a los agresores? (nombre o alias)\n • ¿Características de los agresores? (estatura, complexión, color de cabello, tatuajes, cicatrices, tipo y color de vestimenta.)";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -2126,11 +2039,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Riña";
         
         
-      case 74:
+      case 72:
         setTimeout(() => {
           const response = "Comienza por solicitar al usuario que conserve la calma y realiza las siguientes preguntas:\n • Datos del usuario\n •¿Es la victima?\n •¿Está en proceso?\n •¿Esta cautivo?\n •¿Cuál es su nombre?\n •¿Lugar en donde lo secuestraron? (dirección, lugar o referencia)\n •¿Hace cuanto tiempo fue? (aproximadamente)\n •¿Características físicas de la victima? (para que las unidades de apoyo lo localicen, media filiación, como viste)\n •¿Deme el nombre y teléfono de algún familiar o amigo?\n •¿Sabe cuántos secuestradores están involucrados?\n •¿Sabe quién(es) son los ó el responsable(s)? (nombre o alias)\n •¿Están armados? (tipo de arma, arma largas, arma corta, arma blanca.)\n •¿Características de los responsables? (media filiación, características particulares, como visten, como hablan)\n •¿Conoce las características del vehículo en el que lo secuestraron? (placas, marca, modelo, color).\n •Se escapo\n •¿Cuál es su nombre?\n •¿Quién lo libero?\n •¿Dónde se encuentra en este momento? (dirección, lugar o referencia).\n •¿Está lesionado o enfermo?\n •¿Características físicas de la victima? (para que las unidades de apoyo lo localicen, media filiación, como viste)\n •¿Sabe dónde estuvo cautivo? (dirección, lugar o referencia).\n •¿Cuándo lo secuestraron?\n •¿En dónde?\n •¿Se fugo o lo liberaron?\n •¿Sabe cuántos secuestradores están involucrados?\n •¿Sabe quién(es) son los ó el responsable(s)? (nombre o alias)\n •¿Están armados? (tipo de arma, arma largas, arma corta, arma blanca.)\n •¿Características de los responsables? (media filiación, características particulares, como visten, como hablan)\n •¿Conoce las características del vehículo en el que lo secuestraron? (placas, marca, modelo, color).\n •¿Es un testigo?\n •¿En proceso?\n •¿Tipo de testigo? (visual, auditivo).\n •¿Lugar en donde fué el secuestro o donde esta cautivo? (dirección, lugar o referencia).\n •¿Hace cuanto tiempo fué? (aproximadamente).\n •¿Qué rumbo tomaron?\n •¿Características de la victima? (media filiación, características particulares, como viste).\n •¿Sabe cuántos secuestradores están involucrados?\n •¿Sabe quién(es) son los ó el responsable(s)? (nombre o alias)\n •¿Están armados? (tipo de arma, arma largas, arma corta, arma blanca.)\n •¿Características de los responsables? (media filiación, características particulares, como visten, como hablan)";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -2160,11 +2073,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Secuestro"; 
 
 
-      case 75:
+      case 73:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Se encuentran ahí los sospechosos?\n •¿Cuánto tiempo tiene ahí el sospechoso?\n •Características del sospechoso (estatura, complexión, color de cabello, tatuajes, cicatrices, tipo y color de vestimenta.)\n •¿Cuántos son?\n •¿Están armados?\n •¿Tipo de arma? Fuego, blanca, otra (especifique).\n •¿Está en peligro su vida?\n •¿Están en algún vehículo? (placas, marca, modelo, color).\n •¿Sabe que están haciendo en el lugar?";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -2194,11 +2107,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Sospechoso"; 
 
 
-      case 76:
+      case 74:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Los árboles se encuentran en vía pública?\n •\n •¿Están siendo talados en este momento?\n •¿Conoce el motivo?\n •¿Cuántos han talado?\n •¿Conoce a los responsables?\n •¿Cuántos son?\n •¿Hay algún vehículo en el lugar? (placas, marca, submarca, modelo, color).\n •¿Tiene logos de alguna dependencia?";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -2228,26 +2141,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Envío de Patrulla - Tala de árbol"; 
-            
-      case 77:
-        return "Reunirse?, Podrías ser más específico, por favor?";  
-
-      case 78:
-        return "A toda velocidad?, Podrías especificar por favor?";  
-
-      case 79:
-        return "Dirigirse a..?, Podrías ser más específico, por favor?";  
-
-      case 80:
-        return "Permanezca en ruta?, Podrías especificar por favor?";    
-
-      case 81:
-        return "En movimiento?, Podrías ser más específico, por favor?";    
       
 
-      case 82:
+      case 75:
         setTimeout(() => {
           const response = "Comienza por realizar las siguientes preguntas:\n • Datos del usuario\n •¿Cuánto tiempo lleva el auto en el lugar?\n •¿Sabe si pertenece a algún vecino?\n •¿Características del vehículo? (marca, sub marca, placas, modelo, color, otros (daños que presenta el auto)\n •¿Se observa algún objeto sospechoso dentro del vehículo?\n •¿Entorpece la vialidad?\n •¿Obstruye alguna entrada?";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -2277,21 +2175,11 @@ const generateResponse = (userMessage) => {
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Comprendo que estás realizando un folio de Vialidad y Tránsito - Calidad de Vida"; 
 
 
-      case 83:
-        setTimeout(() => {
-          const response = "Podrías especificar que tipo de Choque (Con lesionados, sin lesionados)";
-          const entranteChatLi = createChatLi2(response, "entrante");
-          chatbox.appendChild(entranteChatLi);
-          chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 500); 
-        return "Comprendo que estás realizando un folio de Vialidad y Tránsito - Choque"; 
-
-
-      case 84:
+      case 76:
         setTimeout(() => {
           const response = "Comienza por solicitar al usuario que conserve la calma y realiza las siguientes preguntas:\n • Datos del usuario\n •¿Hay lesionados en el lugar?\n •¿Cuantos lesionados hay en el lugar\n •¿Consientes o inconscientes?\n •¿Alguno esta atrapado / prensado?\n •¿Alguno perdió la vida?\n •¿Algún Vehículo esta incendiado?\n •¿Existe derrame de gasolina o aceite de los autos?\n •¿Está involucrado algún inmueble o algún poste de luz?\n •¿Se encuentran en el lugar todos los responsables?\n •Si alguno se dio a la fuga, ¿En qué dirección huyo?\n •¿Características del auto en el que se dio a la fuga? (placas, marca, modelo, color).\n •¿Características de cada uno de los vehículos involucrados? (marca, submarca, modelo, color)\n •¿Alguno de los vehículos transporta químicos?\n •¿Qué tipo de químico?\n •¿Hay derrame o fuga?\n •¿Tiene a la vista el rombo de colores que lleva el camión o pipa?\n •¿Qué colores y que números lleva el rombo?\n •El derrame o fuga es en el piso?, en agua (río, laguna, drenaje)?, En el aire?\n •¿Existe riesgo de que ocurran mas accidentes?\n •¿Es usted alguno de los afectados?\n •¿Habla por parte de alguna aseguradora? ¿Cuál?\n •¿Se está obstruyendo la vialidad?";
           const entranteChatLi = createChatLi2(response, "entrante");
@@ -2317,214 +2205,228 @@ const generateResponse = (userMessage) => {
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 400); 
         setTimeout(() => {
-          const response = "¿Deseas saber algo más?";
+          const response = "¿Existe algo más en lo que estés interesado?";
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
+        }, 1000); 
         return "Para folios de Vialidad y Tránsito - Choque - Con Lesionados"; 
 
 
-      case 85:
+      case 77:
         setTimeout(() => {
-          const response = "Comienza por realizar las siguientes preguntas:\n •¿Cuánto tiempo lleva el auto en el lugar?\n •¿Sabe si pertenece a algún vecino?\n •¿Características del vehículo? (marca, sub marca, placas, modelo, color, otros (daños que presenta el auto)\n •¿Se observa algún objeto sospechoso dentro del vehículo?\n •¿Entorpece la vialidad?\n •¿Obstruye alguna entrada?";
+          const response = "Comienza por solicitar al usuario que conserve la calma y realiza las siguientes preguntas:\n •¿Cuántos vehículos están involucrados?\n •¿Hay lesionados? (cambia el motivo y ver instrucción de trabajo Choque con lesionados).\n •¿Algún Vehículo esta incendiado?\n •¿Existe derrame de gasolina o aceite de los autos?\n •¿Está involucrado algún inmueble o algún poste de luz?\n •¿Se encuentran en el lugar todos los responsables?\n\n Si alguno se dio a la fuga, ¿En qué dirección huyo?\n •¿Características del auto en el que se dio a la fuga? (placas, marca, modelo, color).\n •¿Características de cada uno de los vehículos involucrados? (placas, marca, modelo, color).\n •¿Alguno de los vehículos transporta químicos?\n •¿Qué tipo de químico?\n •¿Hay derrame?\n •¿Tiene a la vista el rombo de colores que lleva el camión o pipa?\n •¿Qué colores y que números lleva el rombo?\n •¿Es usted alguno de los afectados?\n •¿Habla por parte de alguna aseguradora? ¿Cuál?\n •¿Se está obstruyendo la vialidad?Datos del usuario\n •¿Hay lesionados en el lugar?\n •¿Cuantos lesionados hay en el lugar\n •¿Consientes o inconscientes?\n •¿Alguno esta atrapado / prensado?\n •¿Alguno perdió la vida?\n •¿Algún Vehículo esta incendiado?\n •¿Existe derrame de gasolina o aceite de los autos?\n •¿Está involucrado algún inmueble o algún poste de luz?\n •¿Se encuentran en el lugar todos los responsables?\n •Si alguno se dio a la fuga, ¿En qué dirección huyo?\n •¿Características del auto en el que se dio a la fuga? (placas, marca, modelo, color).\n •¿Características de cada uno de los vehículos involucrados? (marca, submarca, modelo, color)\n •¿Alguno de los vehículos transporta químicos?\n •¿Qué tipo de químico?\n •¿Hay derrame o fuga?\n •¿Tiene a la vista el rombo de colores que lleva el camión o pipa?\n •¿Qué colores y que números lleva el rombo?\n •El derrame o fuga es en el piso?, en agua (río, laguna, drenaje)?, En el aire?\n •¿Existe riesgo de que ocurran mas accidentes?\n •¿Es usted alguno de los afectados?\n •¿Habla por parte de alguna aseguradora? ¿Cuál?\n •¿Se está obstruyendo la vialidad?";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 100); 
         setTimeout(() => {
-          const response = "En ocasiones estos vehículos fueron ocupados para delinquir, los involucrados los abandonan en cualquier calle para no ser sorprendidos, por tal razón es preferible no acercarse ni tocarlo, ya que las huellas dactilares son parte importante de una investigación.\n\nEs posible que se trate incluso de un auto robado.\n\n\n\nSe debe saber que el motivo puede cambiar si las respuestas implican que la situación es más grave de lo que el mismo denunciante consideró.\n\nSi la situación es de más gravedad que la que el denunciante está expresando se dará aviso de inmediato al Supervisor.";
+          const response = "Solo se usa para choque entre vehículos. Conocidos también como choques lamineros.\nSe excluye el caso en que un vehículo causa daños a una propiedad, este último se considerará y será capturado como motivo de Daños.\nEs importante indagar la codificación del rombo de productos químicos (según la norma NFPA 704) si esta a la vista, ya que este dato nos determina el tipo de químico y que consecuencias pude traer el incidente.\n\nLa norma NFPA 704 pretende a través de un rombo seccionado en cuatro partes de diferentes colores, indicar los grados de peligrosidad de la sustancia a clasificar.\nROJO: Con este color se indican los riesgos a la inflamabilidad con una escala del 0 al 4.\nAZUL: Con este color se indican los riesgos a la salud con una escala del 0 al 4.\nAMARILLO: Con este color se indican los riesgos por reactividad (inestabilidad) con una escala del 0 al 4\nBLANCO: En esta casilla se harán las indicaciones especiales para algunos productos. Como producto oxidante, corrosivo, reactivo con agua o radiactivo. Los símbolos especiales que pueden incluirse en el recuadro blanco son:\nOXI Agente oxidante\nCOR Agente corrosivo\nReacción violenta con el agua\nRadioactividad\n\nDentro de cada recuadro se indicaran los niveles de peligrosidad, los cuales se identifican con una escala numérica del 0 al 4.\n\nSe debe saber que el motivo puede cambiar si las respuestas implican que la situación es más grave de lo que el mismo denunciante consideró.\n\nSi la situación es de más gravedad que la que el denunciante está expresando se dará aviso de inmediato al Supervisor A, Supervisor B, y a su vez al personal de la Central de Radio que se encuentre en al área del 066.";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 200); 
         setTimeout(() => {
-          const response = "Recomienda al usuario:\n • No intentar abrir el auto.\n • No se acerque.\n • \n • De preferencia no lo toque.\n • Cooperar con las autoridades en cuanto arriben a prestarle el apoyo.";
+          const response = "Recomienda al usuario:\n • Evitar discusiones.\n • Si hay fuego o químicos alejarse del lugar y póngase en un lugar seguro.\n • Llamar a su aseguradora.\n • Es importante que los responsables no se retiren del lugar y lleguen a un acuerdo.\n • Ayúdenos a prevenir otro accidente,\n • Cooperar con las autoridades en cuanto arriben a prestarle el apoyo.";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 300); 
         setTimeout(() => {
-          const response = "Se canaliza a: Jefe de Cuadrante\n\nKronos: ext: 8801, 8323, 8816\n\nSi requieres más información puedes consultar el Anexos 33";
+          const response = "Se canaliza a: Jefe de Cuadrante\n\nKronos 8801, 8323, 8816\n\nSector\n\nSi requieres más información puedes consultar el Anexos 34";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 400); 
         setTimeout(() => {
-          const response = "¿Deseas saber algo más?";
+          const response = "¿En qué más puedo ayudarte?";
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
-        return "Comprendo que estás realizando un folio de Vialidad y Tránsito - Calidad de Vida"; 
+        }, 1000); 
+        return "Para folios de Vialidad y Tránsito - Choque - Sin Lesionados"; 
 
-      case 86:
+
+      case 78:
         setTimeout(() => {
-          const response = "Comienza por realizar las siguientes preguntas:\n •¿Cuánto tiempo lleva el auto en el lugar?\n •¿Sabe si pertenece a algún vecino?\n •¿Características del vehículo? (marca, sub marca, placas, modelo, color, otros (daños que presenta el auto)\n •¿Se observa algún objeto sospechoso dentro del vehículo?\n •¿Entorpece la vialidad?\n •¿Obstruye alguna entrada?";
+          const response = "Comienza por realizar las siguientes preguntas:\n •¿Nombre del usuario?\n •¿Cuáles son los datos del vehículo?\n •¿Qué información es la que requiere?";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 100); 
         setTimeout(() => {
-          const response = "En ocasiones estos vehículos fueron ocupados para delinquir, los involucrados los abandonan en cualquier calle para no ser sorprendidos, por tal razón es preferible no acercarse ni tocarlo, ya que las huellas dactilares son parte importante de una investigación.\n\nEs posible que se trate incluso de un auto robado.\n\n\n\nSe debe saber que el motivo puede cambiar si las respuestas implican que la situación es más grave de lo que el mismo denunciante consideró.\n\nSi la situación es de más gravedad que la que el denunciante está expresando se dará aviso de inmediato al Supervisor.";
+          const response = "Se recomienda consultar la pagina de internet finanzas.cdmx.gob.mx";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 200); 
         setTimeout(() => {
-          const response = "Recomienda al usuario:\n • No intentar abrir el auto.\n • No se acerque.\n • \n • De preferencia no lo toque.\n • Cooperar con las autoridades en cuanto arriben a prestarle el apoyo.";
+          const response = "Recomienda al usuario:\n • Sugerir al ciudadano contar con lápiz y papel para anotar la información que solicito\n • Indicarle que puede consultar sus infracciones en la siguiente pagina de internet finanzas.cdmx.gob.mx";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 300); 
         setTimeout(() => {
-          const response = "Se canaliza a: Jefe de Cuadrante\n\nKronos: ext: 8801, 8323, 8816\n\nSi requieres más información puedes consultar el Anexos 33";
+          const response = "Se canaliza a: MODULOS DE ATENCIÓN\n\n• Calle Chimalpopoca esq. San Antonio Abad, Col. Obrera, Del. Cuauhtémoc\nTeléfono 5761.8411\nLunes a Viernes de 08:00 a 19:00 hrs., Sábado de 8:00 a 15:00 hrs. Metro Pino Suárez\n\n• Calle Liverpool 136 planta baja, Col. Juárez, Del. Cuauhtémoc\nTeléfono 5242.5100 Ext. 4996, 4997 y 4998, Lunes a Viernes de 8:00 a 19:00 hrs., Sábado de 8:00 a 15:00 hrs.\nMetro Insurgentes\n\n• Fray Servando Av. Fray Servando Teresa de Mier No. 142, Col. Centro, Del. Cuauhtémoc\nLunes a Viernes de 8:00 a 19:00 hrs., Sábado de 8:00 a 15:00 hrs.\n\nSi requieres más información puedes consultar el Anexos 35";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 400); 
         setTimeout(() => {
-          const response = "¿Deseas saber algo más?";
+          const response = "¿Quisieras que investiguemos algo más?";
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
-        return "Comprendo que estás realizando un folio de Vialidad y Tránsito - Calidad de Vida"; 
+        }, 1000); 
+        return "Comprendo que estás realizando un folio de Vialidad y Tránsito - Circulación Prohibida"; 
 
-      case 87:
+      case 79:
         setTimeout(() => {
-          const response = "Comienza por realizar las siguientes preguntas:\n •¿Cuánto tiempo lleva el auto en el lugar?\n •¿Sabe si pertenece a algún vecino?\n •¿Características del vehículo? (marca, sub marca, placas, modelo, color, otros (daños que presenta el auto)\n •¿Se observa algún objeto sospechoso dentro del vehículo?\n •¿Entorpece la vialidad?\n •¿Obstruye alguna entrada?";
+          const response = "Comienza por realizar las siguientes preguntas:\n •¿Nombre del usuario?\n •¿Cuáles son los datos del vehículo?\n •¿Qué información es la que requiere?";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 100); 
         setTimeout(() => {
-          const response = "En ocasiones estos vehículos fueron ocupados para delinquir, los involucrados los abandonan en cualquier calle para no ser sorprendidos, por tal razón es preferible no acercarse ni tocarlo, ya que las huellas dactilares son parte importante de una investigación.\n\nEs posible que se trate incluso de un auto robado.\n\n\n\nSe debe saber que el motivo puede cambiar si las respuestas implican que la situación es más grave de lo que el mismo denunciante consideró.\n\nSi la situación es de más gravedad que la que el denunciante está expresando se dará aviso de inmediato al Supervisor.";
+          const response = "Se recomienda consultar la pagina de internet finanzas.cdmx.gob.mx";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 200); 
         setTimeout(() => {
-          const response = "Recomienda al usuario:\n • No intentar abrir el auto.\n • No se acerque.\n • \n • De preferencia no lo toque.\n • Cooperar con las autoridades en cuanto arriben a prestarle el apoyo.";
+          const response = "Recomienda al usuario:\n • Sugerir al ciudadano contar con lápiz y papel para anotar la información que solicito\n • Indicarle que puede consultar sus infracciones en la siguiente pagina de internet finanzas.cdmx.gob.mx";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 300); 
         setTimeout(() => {
-          const response = "Se canaliza a: Jefe de Cuadrante\n\nKronos: ext: 8801, 8323, 8816\n\nSi requieres más información puedes consultar el Anexos 33";
+          const response = "Se canaliza a: MODULOS DE ATENCIÓN\n\n• Calle Chimalpopoca esq. San Antonio Abad, Col. Obrera, Del. Cuauhtémoc\nTeléfono 5761.8411\nLunes a Viernes de 08:00 a 19:00 hrs., Sábado de 8:00 a 15:00 hrs. Metro Pino Suárez\n\n• Calle Liverpool 136 planta baja, Col. Juárez, Del. Cuauhtémoc\nTeléfono 5242.5100 Ext. 4996, 4997 y 4998, Lunes a Viernes de 8:00 a 19:00 hrs., Sábado de 8:00 a 15:00 hrs.\nMetro Insurgentes\n\n• Fray Servando Av. Fray Servando Teresa de Mier No. 142, Col. Centro, Del. Cuauhtémoc\nLunes a Viernes de 8:00 a 19:00 hrs., Sábado de 8:00 a 15:00 hrs.\n\nSi requieres más información puedes consultar el Anexos 35";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 400); 
         setTimeout(() => {
-          const response = "¿Deseas saber algo más?";
+          const response = "¿Tienes alguna otra consulta o inquietud?";
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
-        return "Comprendo que estás realizando un folio de Vialidad y Tránsito - Calidad de Vida"; 
+        }, 1000); 
+        return "Comprendo que estás realizando un folio de Vialidad y Tránsito - Hoy no circula"; 
 
-      case 88:
+      case 80:
         setTimeout(() => {
-          const response = "Comienza por realizar las siguientes preguntas:\n •¿Cuánto tiempo lleva el auto en el lugar?\n •¿Sabe si pertenece a algún vecino?\n •¿Características del vehículo? (marca, sub marca, placas, modelo, color, otros (daños que presenta el auto)\n •¿Se observa algún objeto sospechoso dentro del vehículo?\n •¿Entorpece la vialidad?\n •¿Obstruye alguna entrada?";
+          const response = "Comienza por realizar las siguientes preguntas:\n •¿Nombre del usuario?\n •¿Cuáles son los datos del vehículo?\n •¿Qué información es la que requiere?";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 100); 
         setTimeout(() => {
-          const response = "En ocasiones estos vehículos fueron ocupados para delinquir, los involucrados los abandonan en cualquier calle para no ser sorprendidos, por tal razón es preferible no acercarse ni tocarlo, ya que las huellas dactilares son parte importante de una investigación.\n\nEs posible que se trate incluso de un auto robado.\n\n\n\nSe debe saber que el motivo puede cambiar si las respuestas implican que la situación es más grave de lo que el mismo denunciante consideró.\n\nSi la situación es de más gravedad que la que el denunciante está expresando se dará aviso de inmediato al Supervisor.";
+          const response = "Se recomienda consultar la pagina de internet finanzas.cdmx.gob.mx";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 200); 
         setTimeout(() => {
-          const response = "Recomienda al usuario:\n • No intentar abrir el auto.\n • No se acerque.\n • \n • De preferencia no lo toque.\n • Cooperar con las autoridades en cuanto arriben a prestarle el apoyo.";
+          const response = "Recomienda al usuario:\n • Sugerir al ciudadano contar con lápiz y papel para anotar la información que solicito\n • Indicarle que puede consultar sus infracciones en la siguiente pagina de internet finanzas.cdmx.gob.mx";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 300); 
         setTimeout(() => {
-          const response = "Se canaliza a: Jefe de Cuadrante\n\nKronos: ext: 8801, 8323, 8816\n\nSi requieres más información puedes consultar el Anexos 33";
+          const response = "Se canaliza a: MODULOS DE ATENCIÓN\n\n• Calle Chimalpopoca esq. San Antonio Abad, Col. Obrera, Del. Cuauhtémoc\nTeléfono 5761.8411\nLunes a Viernes de 08:00 a 19:00 hrs., Sábado de 8:00 a 15:00 hrs. Metro Pino Suárez\n\n• Calle Liverpool 136 planta baja, Col. Juárez, Del. Cuauhtémoc\nTeléfono 5242.5100 Ext. 4996, 4997 y 4998, Lunes a Viernes de 8:00 a 19:00 hrs., Sábado de 8:00 a 15:00 hrs.\nMetro Insurgentes\n\n• Fray Servando Av. Fray Servando Teresa de Mier No. 142, Col. Centro, Del. Cuauhtémoc\nLunes a Viernes de 8:00 a 19:00 hrs., Sábado de 8:00 a 15:00 hrs.\n\nSi requieres más información puedes consultar el Anexos 35";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 400); 
         setTimeout(() => {
-          const response = "¿Deseas saber algo más?";
+          const response = "¿Hay alguna otra información que necesitas?";
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
-        return "Comprendo que estás realizando un folio de Vialidad y Tránsito - Calidad de Vida"; 
+        }, 1000); 
+        return "Comprendo que estás realizando un folio de Vialidad y Tránsito - Infracciones"; 
 
-      case 89:
+      case 81:
         setTimeout(() => {
-          const response = "Comienza por realizar las siguientes preguntas:\n •¿Cuánto tiempo lleva el auto en el lugar?\n •¿Sabe si pertenece a algún vecino?\n •¿Características del vehículo? (marca, sub marca, placas, modelo, color, otros (daños que presenta el auto)\n •¿Se observa algún objeto sospechoso dentro del vehículo?\n •¿Entorpece la vialidad?\n •¿Obstruye alguna entrada?";
+          const response = "Comienza por realizar las siguientes preguntas:\n •¿Qué se está obstruyendo (entrada, calle, especifique)?\n •¿Qué vehículo obstruye? (Tipo de vehículo, Placas, marca, submarca, modelo, color)\n •¿Cuánto tiempo lleva obstruyendo?\n •¿Se encuentra el responsable en el lugar?\n •¿Hay personas en el interior del vehículo o cerca de el?";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 100); 
         setTimeout(() => {
-          const response = "En ocasiones estos vehículos fueron ocupados para delinquir, los involucrados los abandonan en cualquier calle para no ser sorprendidos, por tal razón es preferible no acercarse ni tocarlo, ya que las huellas dactilares son parte importante de una investigación.\n\nEs posible que se trate incluso de un auto robado.\n\n\n\nSe debe saber que el motivo puede cambiar si las respuestas implican que la situación es más grave de lo que el mismo denunciante consideró.\n\nSi la situación es de más gravedad que la que el denunciante está expresando se dará aviso de inmediato al Supervisor.";
+          const response = "Se debe saber que el motivo puede cambiar si las respuestas implican que la situación es más grave de lo que el mismo denunciante consideró.\n\nSi la situación es de más gravedad que la que el denunciante está expresando se dará aviso de inmediato al Supervisor.";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 200); 
         setTimeout(() => {
-          const response = "Recomienda al usuario:\n • No intentar abrir el auto.\n • No se acerque.\n • \n • De preferencia no lo toque.\n • Cooperar con las autoridades en cuanto arriben a prestarle el apoyo.";
+          const response = "Recomienda al usuario:\n • Evitar discusiones.\n • No agreda a nadie, ni física ni verbalmente.\n • Cooperar con las autoridades en cuanto arriben a prestarle el apoyo.";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 300); 
         setTimeout(() => {
-          const response = "Se canaliza a: Jefe de Cuadrante\n\nKronos: ext: 8801, 8323, 8816\n\nSi requieres más información puedes consultar el Anexos 33";
+          const response = "Se canaliza a: Jefe de Cuadrante\n\nTránsito 8316\n\nSi requieres más información puedes consultar el Anexos 36";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 400); 
         setTimeout(() => {
-          const response = "¿Deseas saber algo más?";
+          const response = "¿Puedo brindarte más detalles o aclaraciones?";
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
-        return "Comprendo que estás realizando un folio de Vialidad y Tránsito - Calidad de Vida"; 
+        }, 1000); 
+        return "Comprendo que estás realizando un folio de Vialidad y Tránsito - Obstrucción en vía pública"; 
 
 
-      case 90:
+      case 82:
         setTimeout(() => {
-          const response = "Comienza por realizar las siguientes preguntas:\n •¿Cuánto tiempo lleva el auto en el lugar?\n •¿Sabe si pertenece a algún vecino?\n •¿Características del vehículo? (marca, sub marca, placas, modelo, color, otros (daños que presenta el auto)\n •¿Se observa algún objeto sospechoso dentro del vehículo?\n •¿Entorpece la vialidad?\n •¿Obstruye alguna entrada?";
+          const response = "Comienza por realizar las siguientes preguntas:\n •¿Cuánto tiempo lleva detenido el tráfico en el lugar?\n •¿Conoce la razón que está originando el embotellamiento?\n •¿Si es algún semáforo descompuesto?\n •¿El semáforo que está sobre que calle o avenida? o ¿En que sentido?\n •¿Está pegado o está apagado?";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 100); 
         setTimeout(() => {
-          const response = "En ocasiones estos vehículos fueron ocupados para delinquir, los involucrados los abandonan en cualquier calle para no ser sorprendidos, por tal razón es preferible no acercarse ni tocarlo, ya que las huellas dactilares son parte importante de una investigación.\n\nEs posible que se trate incluso de un auto robado.\n\n\n\nSe debe saber que el motivo puede cambiar si las respuestas implican que la situación es más grave de lo que el mismo denunciante consideró.\n\nSi la situación es de más gravedad que la que el denunciante está expresando se dará aviso de inmediato al Supervisor.";
+          const response = "No se debe utilizar para ayudar a los vehículos descompuestos en la vía pública, eso no es competencia del 911.\nSe debe saber que el motivo puede cambiar si las respuestas implican que la situación es más grave de lo que el mismo denunciante consideró.\nSi la situación es de más gravedad o ponga en riesgo la vida de la persona se da aviso de inmediato al coordinador vez al personal de la Central de Radio que se encuentre en al área al 911.";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 200); 
         setTimeout(() => {
-          const response = "Recomienda al usuario:\n • No intentar abrir el auto.\n • No se acerque.\n • \n • De preferencia no lo toque.\n • Cooperar con las autoridades en cuanto arriben a prestarle el apoyo.";
+          const response = "Recomienda al usuario:\n • Conservar la calma.\n • Trate de tomar una vía alterna.\n • Evite usar el claxon.\n • Cooperar con las autoridades en cuanto arriben a prestarle el apoyo.";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 300); 
         setTimeout(() => {
-          const response = "Se canaliza a: Jefe de Cuadrante\n\nKronos: ext: 8801, 8323, 8816\n\nSi requieres más información puedes consultar el Anexos 33";
+          const response = "Se canaliza a: Descompuesto Ingeniería Vial 5542 27 72 y Solicitud Ingeniería Vial 5692 68 79\n\nSi requieres más información puedes consultar el Anexos 37";
           const entranteChatLi = createChatLi2(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 400); 
         setTimeout(() => {
-          const response = "¿Deseas saber algo más?";
+          const response = "¿Necesitas asistencia adicional en algún otro aspecto?";
           const entranteChatLi = createChatLi(response, "entrante");
           chatbox.appendChild(entranteChatLi);
           chatbox.scrollTo(0, chatbox.scrollHeight);
-        }, 2000); 
-        return "Comprendo que estás realizando un folio de Vialidad y Tránsito - Calidad de Vida"; 
+        }, 1000); 
+        return "Comprendo que estás realizando un folio de Vialidad y Tránsito - Sémaforo";
+        
+        
 
-        case 92:
+        
+    //Especificaciones
+        case 83:
+          setTimeout(() => {
+            const response = "Podrías especificar que tipo de lesionados (Calidad de vida, caos vial, choque, circulación prohibida, infracciones, obstrucción en vía pública, semáforo)";
+            const entranteChatLi = createChatLi2(response, "entrante");
+            chatbox.appendChild(entranteChatLi);
+            chatbox.scrollTo(0, chatbox.scrollHeight);
+          }, 500); 
+          return "Comprendo que estás realizando un folio de Vialidad y Tránsito"; 
+
+        case 84:
           setTimeout(() => {
             const response = "Podrías especificar que tipo de lesionados (por arma blanca, por arma de fuego, por atrollamiento, por caida o por golpes)";
             const entranteChatLi = createChatLi2(response, "entrante");
@@ -2532,6 +2434,46 @@ const generateResponse = (userMessage) => {
             chatbox.scrollTo(0, chatbox.scrollHeight);
           }, 500); 
           return "Comprendo que estás realizando un folio de Envío de Patrulla - Lesionados (ERUM)"; 
+
+        
+        case 85:
+          setTimeout(() => {
+            const response = "Podrías especificar que tipo queja (policías, custodios, seguridad privada, servidores públicos)";
+            const entranteChatLi = createChatLi2(response, "entrante");
+            chatbox.appendChild(entranteChatLi);
+            chatbox.scrollTo(0, chatbox.scrollHeight);
+          }, 500); 
+          return "Comprendo que estás realizando un folio de Queja";
+
+
+        case 86:
+          setTimeout(() => {
+            const response = "Podrías especificar que tipo de Choque (Con lesionados, sin lesionados)";
+            const entranteChatLi = createChatLi2(response, "entrante");
+            chatbox.appendChild(entranteChatLi);
+            chatbox.scrollTo(0, chatbox.scrollHeight);
+          }, 500); 
+          return "Comprendo que estás realizando un folio de Vialidad y Tránsito - Choque"; 
+        
+          
+        case 87:
+          setTimeout(() => {
+            const response = "[Haz click para abrir Diagramas]";
+            const entranteChatLi = createChatLi4(response, "entrante");
+            chatbox.appendChild(entranteChatLi);
+            chatbox.scrollTo(0, chatbox.scrollHeight);
+          }, 100);
+          setTimeout(() => {
+            const response = "¿Requieres algo más?";
+            const entranteChatLi = createChatLi(response, "entrante");
+            chatbox.appendChild(entranteChatLi);
+            chatbox.scrollTo(0, chatbox.scrollHeight);
+          }, 1000); 
+          return "Por supuesto, te puedo mostrar algunos diagramas"; 
+
+
+        case 88://no
+          return "Es un gusto ayudarte, estoy a tu servicio, si me necesitas estaré por aquí";  
 
     
         default:
@@ -2541,6 +2483,8 @@ const generateResponse = (userMessage) => {
   
 
 };
+
+
 
 
 
@@ -2569,7 +2513,6 @@ const handleChat = () => {
   }, 600);
 
 };
-
 
 
 
@@ -2602,5 +2545,17 @@ chatbotToggler.addEventListener("click", () => {
   enableTextarea(); // Habilita el textarea al mostrar el chatbot
 });
 
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  var showMenuButton = document.getElementById('showmenu');
+  var menu = document.getElementById('menu');
+
+  showMenuButton.addEventListener('click', function () {
+      menu.classList.toggle('show');
+  });
+});
 
 
